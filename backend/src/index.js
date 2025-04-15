@@ -9,8 +9,9 @@ import authRouter from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 import cors from "cors";
 dotenv.config()
-app.use(express.urlencoded({extended:true}));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+app.use(express.json({ limit: '10mb' }));
+
 
 const PORT = process.env.PORT
 const __dirname = path.resolve();
